@@ -86,6 +86,12 @@ function generateButtons() {
             }
 
             button.textContent = button.id;
+            button.addEventListener('click', () => {
+                button.classList.add('clicked');
+            button.addEventListener('transitionend', () => {
+                button.classList.remove('clicked');
+            })
+            })
             row.appendChild(button);
             counter++;
             console.log(counter);

@@ -2,10 +2,10 @@ h1,
 .calculator,
 .buttonrow {
     border-style: solid;
-    border-color: #3c3c99;
+    border-color: black;
     border-radius: 15px;
-    color: darkblue;
-    background-color: aliceblue;
+    color: black;
+    background-color: yellow;
     display: flex;
 }
 
@@ -25,7 +25,8 @@ h1 {
     justify-content: right;
 }
 
-.container {
+.container,
+body {
     display: flex;
     
 }
@@ -46,4 +47,18 @@ h1 {
 button {
     flex: 1 0 auto;
     width: 60px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 15px;
+    color: black;
+    background-color: yellow;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.06s ease;
 }
+
+.clicked {
+    transform:scale(1.1);
+    box-shadow: 0 0 10px;
+}
+
