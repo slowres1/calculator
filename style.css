@@ -21,6 +21,10 @@ h1,
     margin-right: 30px;
 }
 
+h1 {
+    justify-content: right;
+}
+
 .container {
     display: flex;
     

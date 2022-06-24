@@ -31,8 +31,6 @@ function operate (operator, num1, num2) {
     };
 };
 
-
-
 function generateButtons() {
     const calculator = document.querySelector('.calculator');
     let counter = 1;
@@ -78,16 +76,18 @@ function assignValues() {
             case "14":
             case "15":
                 button.setAttribute('id', counter);
+                button.classList.add('number');
                 counter++;
                 break;
             case "8":
                 button.setAttribute('id', '0');
+                button.classList.add('number');
                 break;
             case "12":
                 button.setAttribute('id', 'Clear');
                 break;
             case "16":
-                button.setAttribute('id', '=');
+                button.setAttribute('id', 'equals');
                 break;
         }
         button.textContent = button.id;
@@ -96,3 +96,20 @@ function assignValues() {
 
 generateButtons();
 assignValues();
+
+function getNumber (array) {
+    const buttons = document.querySelectorAll('.number');
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            array.push(button.id);
+            console.log(array);
+            string = array.join('');
+            console.log(string);
+        });
+    });
+};
+
+let array = [];
+array = getNumber(array);
+
+
