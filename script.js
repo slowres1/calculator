@@ -97,19 +97,30 @@ function assignValues() {
 generateButtons();
 assignValues();
 
-function getNumber (array) {
-    const buttons = document.querySelectorAll('.number');
-    buttons.forEach((button) => {
-        button.addEventListener('click', () => {
-            array.push(button.id);
-            console.log(array);
-            string = array.join('');
-            console.log(string);
-        });
-    });
-};
+const display = document.querySelector('h1');
+const buttons = document.querySelectorAll('.number');
+const clear = document.querySelector('#Clear');
 
-let array = [];
-array = getNumber(array);
+//list of buttons with individual IDs
+//all "number" buttons share a class
+//lets just have an individual number for now
 
+//addEventListener sets up a function that is called every time button is pressed! so after adding eventlistener functions there's no need to call them separately.
 
+console.log(buttons);
+buttons.forEach((button) => {
+    button.addEventListener('click', () => appendNumber(button.id));
+});
+
+clear.addEventListener('click', () => clearDisplay());
+
+function appendNumber(number) {
+    if (display.textContent === '0') {
+        display.textContent = '';
+    }
+    display.textContent += number;
+}
+
+function clearDisplay() {
+    display.textContent = '0';
+}
